@@ -1,0 +1,27 @@
+# ADR-003: Why Firebase was chosen over Supabase
+
+**Status:** Proposed
+**Date:** 2026-05-14
+
+## Context
+
+We need a Backend-as-a-Service (BaaS) platform to handle authentication, cloud database, storage, and push notifications. The project is an Android application with a planned future migration to Kotlin Multiplatform (KMP). We evaluated Firebase and Supabase.
+
+## Decision
+
+We will use Firebase.
+
+## Consequences
+
+### Pros
+
+*   **Industry standard** with extensive, production-proven documentation and a massive community.
+*   **Native, robust SDK support** for Android (Jetpack integration) and official KMP Firebase SDKs available via GitLive.
+*   **Superior out-of-the-box infrastructure** for push notifications (FCM) and deep analytics (Crashlytics, Remote Config).
+*   **Offline data persistence** works flawlessly with Firestore out of the box.
+
+### Cons
+
+*   **Vendor lock-in** to the Google Cloud ecosystem makes future self-hosting impossible.
+*   **NoSQL structure** (Firestore) makes complex relations and deep queries harder to manage than SQL.
+*   **Pricing can scale unpredictably** with high read/write volumes if queries are poorly optimized.

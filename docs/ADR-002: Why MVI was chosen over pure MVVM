@@ -1,0 +1,28 @@
+# ADR-002: Choosing MVI for UI State Management
+
+**Status:** Proposed
+**Date:** 2026-05-14
+
+## Context
+
+We need an architectural pattern for UI state management. The project is currently Android-first but plans a transition to Kotlin Multiplatform (KMP) in the future. We evaluated pure MVVM and MVI (Model-View-Intent).
+
+## Decision
+
+We will use MVI.
+
+## Consequences
+
+### Pros
+
+*   **Unidirectional Data Flow (UDF)** ensures a single source of truth for the UI state.
+*   **Highly compatible with KMP** because state-reducing logic is pure Kotlin and independent of platform UI.
+*   **Centralized state** makes UI state reproduction, debugging, and logging much easier.
+*   **Eliminates race conditions** caused by multiple independent `LiveData`/`StateFlow` streams in pure MVVM.
+*   **Fits perfectly** with declarative UI frameworks like Jetpack Compose and Compose Multiplatform.
+
+### Cons
+
+*   **Higher learning curve** and more boilerplate code compared to simple MVVM.
+*   Creating separate `Intent`/`Action` objects for every user interaction can feel **verbose for small screens**.
+*   Single-state updates can cause **unnecessary UI re-rendering** if not optimized with `distinctUntilChanged`.

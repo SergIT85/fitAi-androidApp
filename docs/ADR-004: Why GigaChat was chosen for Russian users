@@ -1,0 +1,28 @@
+# ADR-004: Why GigaChat was chosen for Russian users
+
+**Status:** Proposed
+**Date:** 2026-05-14
+
+## Context
+
+We need to integrate a Large Language Model (LLM) to power AI features for our primary user base located in Russia. We evaluated GigaChat against global alternatives like OpenAI GPT or Anthropic Claude.
+
+## Decision
+
+We will use GigaChat.
+
+## Consequences
+
+### Pros
+
+*   **Superior understanding** of Russian cultural context, local idioms, and language nuances.
+*   **Fully available in Russia** without the need for VPNs, complex proxy setups, or foreign phone numbers.
+*   **Simplified legal compliance** with Russian data localization and personal data protection laws (FZ-152).
+*   **Straightforward B2B payments** and invoicing via local Russian bank accounts and corporate cards.
+*   **Low network latency** for local users due to hosting on domestic server infrastructure.
+
+### Cons
+
+*   **Lower reasoning capabilities** in complex coding, logic, or multilingual tasks compared to GPT-4o or Claude 3.5.
+*   **Smaller global developer community**, resulting in fewer ready-to-use SDKs and open-source wrappers.
+*   **Restricted scalability** if the application decides to expand to international markets in the future.

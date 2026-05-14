@@ -1,0 +1,25 @@
+# ADR-001: Choosing Hilt with a Planned Migration Path to Koin for KMP Training
+
+**Status:** Proposed
+**Date:** 2026-05-13
+
+## Context
+
+We are starting a new greenfield Android project. The long-term roadmap includes a migration to Kotlin Multiplatform (KMP). This requires a KMP-compatible dependency injection framework like Koin. However, a primary objective of this project is developer training and gaining practical architectural experience with different industry-standard frameworks.
+
+## Decision
+
+We will initially implement Hilt, with the explicit intention of migrating to Koin later when the KMP transition begins.
+
+## Consequences
+
+### Pros
+
+*   **Dual-framework experience:** The team gains deep, practical knowledge of both Hilt (industry standard for native Android) and Koin.
+*   **Real-world migration training:** Provides hands-on experience in refactoring DI layers and managing architectural shifts.
+*   **Immediate compile-time safety:** Leverages Hilt’s compile-time checks during the initial Android-only development phase.
+
+### Cons
+
+*   **High technical debt by design:** We are intentionally introducing refactoring work that must be completed before adding iOS support.
+*   **Increased development time:** Rewriting the DI layer later will temporarily halt feature development.

@@ -14,7 +14,7 @@
 *   `:feature:settings`: Contains settings logging flow. Depends on `:core:domain`, `:core:ui`, `:core:common`.
 *   `:feature:ai-coach`: Contains all UI and ViewModel logic for the ai-coach flow. Depends on `:core:domain`, `:core:ui`, `:core:common`.
 *   `:data:repository`: Implementation of domain repositories. Depends on `:core:domain`, `:data:model`, `:core:network`, `:core:database`, `:core:datastore`.
-*   `:data:model`: Implementation of domain repositories. Depends on `:core:domain`, `:data:model`, `:core:network`, `:core:database`, `:core:datastore`.
+*   `:data:model`: Implementation of models amd mappers. 
 *   `:core:domain`: Contains domain models and UseCases (e.g., `LogWorkoutUseCase`). Has NO Android dependencies. The most independent module is injected via App module.
 *   `:core:network`: Provides Retrofit, OkHttp, and API definitions.
 *   `:core:common`: Provides extensions, utility classes, and the `BaseViewModel`.

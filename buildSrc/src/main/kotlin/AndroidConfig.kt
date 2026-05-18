@@ -1,29 +1,53 @@
-import com.android.build.api.dsl.LibraryExtension
+import com.android.build.api.dsl.CommonExtension
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
+import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-// Общая функция для настройки всех базовых параметров Android Library
-fun LibraryExtension.configureBaseAndroid(project: Project) {
-    compileSdk = 36
+fun Project.configureBaseAndroid(
+    commonExtension: CommonExtension<*, *, *, *, *, *>
+) {
+    commonExtension.apply {
+        compileSdk = ProjectConfig.COMPILE_SDK // Из центрального файла!
 
-    defaultConfig {
-        minSdk = 24
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
+        defaultConfig {
+            minSdk = ProjectConfig.MIN_SDK // Из центрального файла!
+            testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            if (this is com.android.build.api.dsl.LibraryDefaultConfig) {
+                consumerProguardFiles("consumer-rules.pro")
+            }
+        }
+
+        buildTypes {
+            // Release конфигурация
+            named("release") {
+                isMinifyEnabled = false
+                proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+                )
+            }
+
+            // Debug конфигурация
+            named("debug") {
+                isMinifyEnabled = false
+                // Можно добавить debug-специфичные настройки
+                // applicationIdSuffix = ".debug" // только для app
+                // versionNameSuffix = "-DEBUG"
+            }
+        }
+
+        compileOptions {
+            sourceCompatibility = JavaVersion.toVersion(ProjectConfig.JAVA_VERSION)
+            targetCompatibility = JavaVersion.toVersion(ProjectConfig.JAVA_VERSION)
         }
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+    tasks.withType<KotlinCompile> {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.fromTarget(ProjectConfig.JVM_TARGET))
+        }
     }
 }

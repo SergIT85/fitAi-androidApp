@@ -3,9 +3,9 @@ plugins {
 }
 
 android {
-    namespace = "com.by_korchagin.testing"
-
+    namespace = "com.by_korchagin.model"
 }
 
 dependencies {
+
 }

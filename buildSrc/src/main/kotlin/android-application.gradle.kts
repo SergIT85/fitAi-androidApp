@@ -1,10 +1,9 @@
 plugins {
     id("com.android.application")
-    id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-configureBaseAndroid(extensions.getByType<com.android.build.api.dsl.ApplicationExtension>())
+configureAndroidApplication()
 
 extensions.configure<com.android.build.api.dsl.ApplicationExtension> {
     defaultConfig {
@@ -17,7 +16,6 @@ extensions.configure<com.android.build.api.dsl.ApplicationExtension> {
     buildFeatures {
         compose = true
     }
-
 
     buildTypes {
         named("debug") {

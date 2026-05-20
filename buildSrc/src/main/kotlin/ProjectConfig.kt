@@ -8,8 +8,8 @@ object ProjectConfig {
 
     const val APPLICATION_ID = "com.by_korchagin.fitai"
 
-    const val JAVA_VERSION = 11
-    const val JVM_TARGET = "11"
+    const val JAVA_VERSION = 21
+    const val JVM_TARGET = "21"
 
     object BuildTypes {
         object Debug {

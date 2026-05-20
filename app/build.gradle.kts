@@ -1,5 +1,7 @@
 plugins {
     id("android-application")
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -7,6 +9,10 @@ android {
 }
 
 dependencies {
+
+    implementation(libs.dagger.hilt.android)
+    ksp(libs.dagger.hilt.compiler)
+
     implementation(project(":feature:onboarding"))
     implementation(project(":feature:workout"))
     implementation(project(":feature:dashboard"))

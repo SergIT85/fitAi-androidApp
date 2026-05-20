@@ -1,5 +1,6 @@
 plugins {
     id("android-base-library")
+    id("com.google.devtools.ksp")
 }
 
 android {

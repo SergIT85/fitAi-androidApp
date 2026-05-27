@@ -1,0 +1,46 @@
+# Workflow name displayed in GitHub
+name: Pull Request Check
+
+# Trigger: run this workflow when a Pull Request is created
+on:
+  pull_request:
+    # ... targeting the 'main' branch.
+    # !!! IMPORTANT: If your default branch is 'master' or 'develop',
+    # change 'main' to your branch name.
+    branches:
+      - main
+      - develop
+
+# Jobs to be executed
+jobs:
+  # Creating a single job named 'lint-check'
+  lint-check:
+    # Running on the latest Ubuntu version
+    runs-on: ubuntu-latest
+
+    # Steps to execute within this job
+    steps:
+      # Step 1: Clone the repository
+      # Standard action that downloads code from your PR
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Java (JDK)
+      # Gradle and Android builds require Java. Using version 21
+      # as specified in your ProjectConfig.kt
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      # Step 3: Grant execute permission for Gradle Wrapper
+      # Linux runners (like GitHub Actions) require gradlew to be executable
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      # Step 4: Run Ktlint
+      # Main step. Calling the pre-configured Gradle task.
+      # If ktlintCheck finds errors, this step and the whole workflow will fail.
+      - name: Run Ktlint
+        run: ./gradlew ktlintCheck

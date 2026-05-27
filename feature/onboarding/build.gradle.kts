@@ -4,7 +4,6 @@ plugins {
 
 android {
     namespace = "com.by_korchagin.f_onboarding"
-
 }
 
 dependencies {

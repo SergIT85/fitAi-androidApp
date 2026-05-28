@@ -14,7 +14,7 @@ on:
 # Jobs to be executed
 jobs:
   # Creating a single job named 'lint-check'
-  lint-check:
+  quality-gate:
     # Running on the latest Ubuntu version
     runs-on: ubuntu-latest
 

@@ -1,0 +1,1 @@
+# Add custom ProGuard rules for consumers of this library here.

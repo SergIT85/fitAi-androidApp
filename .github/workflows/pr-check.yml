@@ -46,3 +46,7 @@ jobs:
       # If Linters or Unit Tests finds errors, this step and the whole workflow will fail.
       - name: Run Linters and Unit Tests
         run: ./gradlew ktlintCheck detekt testDebugUnitTest
+
+      # Step 5: Build DEBUG App
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug

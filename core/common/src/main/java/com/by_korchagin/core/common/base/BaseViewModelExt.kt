@@ -14,12 +14,13 @@ package com.by_korchagin.core.common.base
  * }
  * ```
  */
-suspend fun <T> BaseViewModel<*>.executeSafuly(
+@Suppress("TooGenericExceptionCaught")
+suspend fun <T> BaseViewModel<*>.executeSafely(
     action: suspend () -> T,
-    onSuccess:(T) -> Unit,
+    onSuccess: (T) -> Unit,
     onError: (Throwable) -> Unit
 ) {
-    try{
+    try {
         val result = action()
         onSuccess(result)
     } catch (e: Throwable) {

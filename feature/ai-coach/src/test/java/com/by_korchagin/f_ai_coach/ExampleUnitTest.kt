@@ -1,8 +1,7 @@
 package com.by_korchagin.f_ai_coach
 
+import org.junit.Assert.assertEquals
 import org.junit.Test
-
-import org.junit.Assert.*
 
 /**
  * Example local unit test, which will execute on the development machine (host).

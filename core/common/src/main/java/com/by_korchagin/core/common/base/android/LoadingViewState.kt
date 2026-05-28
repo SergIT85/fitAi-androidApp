@@ -19,18 +19,18 @@ interface ErrorViewState : ViewState {
 }
 
 /**
+ * Usage example:
+ * data class MyViewState(
+ *     override val isLoading: Boolean = false,
+ *     override val error: String? = null,
+ *     val data: List<Item> = emptyList()
+ * ) : BaseScreenState
+ */
+
+/**
  * Combined interface for common state pattern.
  */
 interface BaseScreenState : LoadingViewState, ErrorViewState {
     override val isLoading: Boolean
     override val error: String?
 }
-
-  /**
-  * Usage example:
-  * data class MyViewState(
-  *     override val isLoading: Boolean = false,
-  *     override val error: String? = null,
-  *     val data: List<Item> = emptyList()
-  * ) : BaseScreenState
-  */

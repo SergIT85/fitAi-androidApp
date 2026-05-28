@@ -1,12 +1,9 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm")
+    id("android-base-library")
 }
-java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+
+android {
+    namespace = "com.by_korchagin.core.common"
 }
-kotlin {
-    compilerOptions {
-        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11
-    }
-}
+
+baseKMPDependencies()

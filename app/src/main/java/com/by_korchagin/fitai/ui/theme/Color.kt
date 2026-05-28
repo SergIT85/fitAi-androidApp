@@ -1,3 +1,5 @@
+@file:Suppress("MagicNumber")
+
 package com.by_korchagin.fitai.ui.theme
 
 import androidx.compose.ui.graphics.Color

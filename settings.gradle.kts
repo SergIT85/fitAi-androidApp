@@ -16,6 +16,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 
@@ -36,3 +37,4 @@ include(":core:database")
 include(":core:datastore")
 include(":core:navigation")
 include(":core:testing")
+include(":data:model")

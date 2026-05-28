@@ -83,7 +83,8 @@ import kotlin.coroutines.EmptyCoroutineContext
  * }
  * ```
  */
-abstract class BaseViewModel<VIEW_STATE : Any>: ViewModel() {
+@Suppress("TooManyFunctions")
+abstract class BaseViewModel<VIEW_STATE : Any> : ViewModel() {
 
     private val viewModelName: String = this::class.simpleName ?: "BaseViewModel"
 
@@ -96,7 +97,7 @@ abstract class BaseViewModel<VIEW_STATE : Any>: ViewModel() {
      *
      * Critical for production stability!
      */
-    private val exceptionHandler = CoroutineExceptionHandler{ _, throwable ->
+    private val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
         log { e(viewModelName, "unhandled exceptions", throwable) }
         handleUnexpectedException(throwable)
     }
@@ -201,8 +202,7 @@ abstract class BaseViewModel<VIEW_STATE : Any>: ViewModel() {
     private val _singleEvent: Channel<SingleEvent> = Channel(
         Channel.BUFFERED,
         onBufferOverflow = BufferOverflow.DROP_OLDEST
-        )
-
+    )
 
     /**
      * Public Flow for consuming one-time events.
@@ -495,7 +495,7 @@ abstract class BaseViewModel<VIEW_STATE : Any>: ViewModel() {
      *
      * @param event Data event to process
      */
-    protected fun  processDataEvent(event: DataEvent) {
+    protected fun processDataEvent(event: DataEvent) {
         log { d(viewModelName, "Data event: ${event::class.simpleName}") }
         updateState(event)
     }
@@ -515,7 +515,7 @@ abstract class BaseViewModel<VIEW_STATE : Any>: ViewModel() {
      *
      * @param event Output event to process
      */
-    protected fun  processOutputEvent(event: OutputEvent) {
+    protected fun processOutputEvent(event: OutputEvent) {
         log { d(viewModelName, "Output Event: ${event::class.simpleName}") }
         updateState(event)
     }
@@ -545,8 +545,8 @@ abstract class BaseViewModel<VIEW_STATE : Any>: ViewModel() {
      * @param errorEvent Error event containing throwable
      */
     protected fun processErrorEvent(errorEvent: ErrorEvent) {
-        log { e(viewModelName, "Error event:${errorEvent.error.message}",errorEvent.error) }
-        val newViewState = if(handleCommonError(errorEvent.error)) {
+        log { e(viewModelName, "Error event:${errorEvent.error.message}", errorEvent.error) }
+        val newViewState = if (handleCommonError(errorEvent.error)) {
             log { d(viewModelName, "Error handled globally") }
             currentState
         } else {
@@ -662,7 +662,7 @@ abstract class BaseViewModel<VIEW_STATE : Any>: ViewModel() {
      *
      * @param block Coroutine code block
      */
-    protected fun launch(block: suspend CoroutineScope.() -> Unit ) {
+    protected fun launch(block: suspend CoroutineScope.() -> Unit) {
         safeScope.launch(block = block)
     }
 
@@ -701,7 +701,6 @@ abstract class BaseViewModel<VIEW_STATE : Any>: ViewModel() {
         // Note: viewModelScope automatically cancels all coroutines
         // safeScope is derived from viewModelScope, so it's also cancelled
     }
-
 }
 
 // ========== Interfaces ==========
@@ -803,7 +802,6 @@ interface OutputEvent : Event
 interface ErrorEvent : Event {
     val error: Throwable
 }
-
 
 interface Logger {
     fun d(tag: String, message: String)

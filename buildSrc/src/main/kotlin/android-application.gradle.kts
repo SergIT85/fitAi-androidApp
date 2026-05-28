@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.plugin.compose")
     id("ktlint-convention")
+    id("detekt-convention")
 }
 
 configureAndroidApplication()

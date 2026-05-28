@@ -2,6 +2,7 @@ plugins {
     id("android-base-library") // Наследует core-ktx и тесты
     id("org.jetbrains.kotlin.plugin.compose")
     id("ktlint-convention")
+    id("detekt-convention")
 }
 
 extensions.configure<com.android.build.api.dsl.LibraryExtension> {

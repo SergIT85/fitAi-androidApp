@@ -1,6 +1,7 @@
 plugins {
     id("org.jetbrains.kotlin.jvm")
     id("ktlint-convention")
+    id("detekt-convention")
 }
 
 // Конфигурация Java и Kotlin для всех JVM модулей

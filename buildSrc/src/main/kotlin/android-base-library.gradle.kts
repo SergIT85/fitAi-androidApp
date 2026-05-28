@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("ktlint-convention")
+    id("detekt-convention")
 }
 
 configureAndroidLibrary()

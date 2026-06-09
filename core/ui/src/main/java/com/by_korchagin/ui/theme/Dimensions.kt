@@ -27,14 +27,14 @@ data class Dimensions(
     val paddingXLarge: Dp = 20.dp,
 
     // === COMPONENT-SPECIFIC DIMENSIONS ===
-    val cardPadding: Dp = 20.dp,              // Internal padding inside cards
-    val screenPadding: Dp = 16.dp,            // Padding from the screen edges
-    val bottomBarHeight: Dp = 72.dp,          // Height of the Bottom Navigation bar
-    val iconSizeSmall: Dp = 20.dp,            // Small icons
-    val iconSizeMedium: Dp = 24.dp,           // Medium/Standard icons
-    val iconSizeLarge: Dp = 32.dp,            // Large icons
-    val avatarSize: Dp = 48.dp,               // User avatar size
-    val buttonHeight: Dp = 56.dp,             // Standard button height
+    val cardPadding: Dp = 20.dp, // Internal padding inside cards
+    val screenPadding: Dp = 16.dp, // Padding from the screen edges
+    val bottomBarHeight: Dp = 72.dp, // Height of the Bottom Navigation bar
+    val iconSizeSmall: Dp = 20.dp, // Small icons
+    val iconSizeMedium: Dp = 24.dp, // Medium/Standard icons
+    val iconSizeLarge: Dp = 32.dp, // Large icons
+    val avatarSize: Dp = 48.dp, // User avatar size
+    val buttonHeight: Dp = 56.dp, // Standard button height
 )
 
 /**

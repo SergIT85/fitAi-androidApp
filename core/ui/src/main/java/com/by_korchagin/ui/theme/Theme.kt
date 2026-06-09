@@ -30,10 +30,10 @@ fun FitnessAppTheme(
         LocalDimensions provides Dimensions()
     ) {
         MaterialTheme(
-            colorScheme = FitnessColorScheme,    // Our custom color scheme
-            typography = FitnessTypography,      // Our custom typography
-            shapes = FitnessShapes,              // Our custom shapes
-            content = content                    // Application content hierarchy
+            colorScheme = FitnessColorScheme, // Our custom color scheme
+            typography = FitnessTypography, // Our custom typography
+            shapes = FitnessShapes, // Our custom shapes
+            content = content // Application content hierarchy
         )
     }
 }

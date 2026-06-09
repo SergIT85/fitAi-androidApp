@@ -1,6 +1,5 @@
 package com.by_korchagin.ui.theme
 
-import android.R
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,7 +11,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Canvas
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
-import androidx.compose.ui.layout.ContentScale.Companion.Fit
 import androidx.compose.ui.tooling.preview.Preview
 
 /**
@@ -45,7 +43,7 @@ fun FitnessBackground(
 
             // Draw the top-left blurred glow spot
             drawBlurredCircle(
-                center = Offset (
+                center = Offset(
                     x = size.width * 0.21f,
                     y = size.height * 0.126f
                 ),
@@ -83,11 +81,11 @@ private fun DrawScope.drawBlurredCircle(
     drawCircle(
         brush = Brush.radialGradient(
             colors = listOf(
-                color,                                      // Center — peak brightness
-                color.copy(alpha = color.alpha * 0.7f),    // 70% of the initial alpha
-                color.copy(alpha = color.alpha * 0.4f),    // 40% of the initial alpha
-                color.copy(alpha = color.alpha * 0.1f),    // 10% of the initial alpha
-                Color.Transparent                           // Edges — fully transparent
+                color, // Center — peak brightness
+                color.copy(alpha = color.alpha * 0.7f), // 70% of the initial alpha
+                color.copy(alpha = color.alpha * 0.4f), // 40% of the initial alpha
+                color.copy(alpha = color.alpha * 0.1f), // 10% of the initial alpha
+                Color.Transparent // Edges — fully transparent
             ),
             center = center,
             radius = radius

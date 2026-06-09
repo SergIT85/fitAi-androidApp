@@ -1,3 +1,5 @@
+@file:Suppress("MagicNumber")
+
 package com.by_korchagin.ui.theme
 
 import androidx.compose.material3.MaterialTheme
@@ -60,12 +62,12 @@ object FitnessColors {
 
     // === COLORS FOR BACKGROUND EFFECTS ===
     // Adding colors for blurred background glow spots
-    val backgroundGlowPrimary = PinkPrimary       // Pink glow tint
-    val backgroundGlowSecondary = PinkPrimary     // Can be adjusted to another color if needed
+    val backgroundGlowPrimary = PinkPrimary // Pink glow tint
+    val backgroundGlowSecondary = PinkPrimary // Can be adjusted to another color if needed
 
     // Alpha channels for glow effects (defined as constants)
-    const val glowAlphaStrong = 0.22f    // For the top glow spot
-    const val glowAlphaWeak = 0.03f      // For the bottom glow spot
+    const val glowAlphaStrong = 0.22f // For the top glow spot
+    const val glowAlphaWeak = 0.03f // For the bottom glow spot
 
     val success = Color(0xFF4CAF50)
     val warning = Color(0xFFFFC107)
@@ -85,5 +87,3 @@ val MaterialTheme.fitnessColors: FitnessColors
     @Composable
     @ReadOnlyComposable
     get() = FitnessColors
-
-

@@ -15,9 +15,9 @@ import com.by_korchagin.ui.R // Replace with your R class
  * Compose automatically selects the correct weight when using fontWeight.
  */
 private val InterFontFamily = FontFamily(
-    Font(R.font.inter_tight_regular, FontWeight.Normal),      // 400
-    Font(R.font.inter_tight_semi_bold, FontWeight.SemiBold),   // 600
-    Font(R.font.inter_tight_bold, FontWeight.Bold)            // 700
+    Font(R.font.inter_tight_regular, FontWeight.Normal), // 400
+    Font(R.font.inter_tight_semi_bold, FontWeight.SemiBold), // 600
+    Font(R.font.inter_tight_bold, FontWeight.Bold) // 700
 )
 
 /**
@@ -39,7 +39,7 @@ val FitnessTypography = Typography(
     displayLarge = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.Bold,
-        fontSize = 48.sp,           // For large numbers (calendar date)
+        fontSize = 48.sp, // For large numbers (calendar date)
         lineHeight = 56.sp,
     ),
 
@@ -48,21 +48,21 @@ val FitnessTypography = Typography(
     headlineLarge = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.Bold,
-        fontSize = 32.sp,           // "11,December 2022"
+        fontSize = 32.sp, // "11,December 2022"
         lineHeight = 40.sp,
     ),
 
     headlineMedium = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.Bold,
-        fontSize = 24.sp,           // "Your Schedule", "Hi!, Youssef"
+        fontSize = 24.sp, // "Your Schedule", "Hi!, Youssef"
         lineHeight = 32.sp,
     ),
 
     headlineSmall = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.Bold,
-        fontSize = 20.sp,           // Bottom sheet / Dialog headers
+        fontSize = 20.sp, // Bottom sheet / Dialog headers
         lineHeight = 28.sp,
     ),
 
@@ -71,35 +71,35 @@ val FitnessTypography = Typography(
     titleLarge = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 20.sp,           // "Start a Workout"
+        fontSize = 20.sp, // "Start a Workout"
         lineHeight = 28.sp,
     ),
 
     titleMedium = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 16.sp,           // "WarmUp", "Pushups session"
+        fontSize = 16.sp, // "WarmUp", "Pushups session"
         lineHeight = 24.sp,
     ),
 
     bodyLarge = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,           // Primary text
+        fontSize = 16.sp, // Primary text
         lineHeight = 24.sp,
     ),
 
     bodyMedium = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,           // "Run 02 km", descriptions
+        fontSize = 14.sp, // "Run 02 km", descriptions
         lineHeight = 20.sp,
     ),
 
     bodySmall = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 12.sp,           // "Date", secondary minor text
+        fontSize = 12.sp, // "Date", secondary minor text
         lineHeight = 16.sp,
     ),
 
@@ -108,23 +108,21 @@ val FitnessTypography = Typography(
     labelLarge = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.SemiBold,
-        fontSize = 16.sp,           // Button text like "Start", "Continue"
+        fontSize = 16.sp, // Button text like "Start", "Continue"
         lineHeight = 24.sp,
     ),
 
     labelMedium = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.Medium,
-        fontSize = 14.sp,           // Smaller buttons
+        fontSize = 14.sp, // Smaller buttons
         lineHeight = 20.sp,
     ),
 
     labelSmall = TextStyle(
         fontFamily = InterFontFamily,
         fontWeight = FontWeight.Medium,
-        fontSize = 12.sp,           // Minor badges / labels
+        fontSize = 12.sp, // Minor badges / labels
         lineHeight = 16.sp,
     ),
 )
-
-

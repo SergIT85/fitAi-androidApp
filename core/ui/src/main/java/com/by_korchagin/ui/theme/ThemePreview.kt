@@ -1,7 +1,16 @@
 package com.by_korchagin.ui.theme
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -22,13 +31,14 @@ import androidx.compose.ui.unit.dp
 // === PREVIEW С ФОНОМ (основной) ===
 @Preview(
     name = "Theme with Background",
-    showSystemUi = true,  // Показывает системные элементы (status bar, navigation)
+    showSystemUi = true, // Показывает системные элементы (status bar, navigation)
     device = "id:pixel_5" // Можно убрать, если не нужно
 )
+@Suppress("LongMethod")
 @Composable
 private fun ThemeWithBackgroundPreview() {
     FitnessAppTheme {
-        FitnessBackground {  // ← Применяем фон
+        FitnessBackground { // ← Применяем фон
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -71,7 +81,7 @@ private fun ThemeWithBackgroundPreview() {
                         .height(MaterialTheme.dimensions.buttonHeight)
                         .background(
                             color = MaterialTheme.colorScheme.secondary, // Желтый
-                            shape = MaterialTheme.shapes.extraLarge      // Pill форма
+                            shape = MaterialTheme.shapes.extraLarge // Pill форма
                         )
                 )
 
@@ -81,8 +91,8 @@ private fun ThemeWithBackgroundPreview() {
                         .fillMaxWidth()
                         .height(100.dp)
                         .background(
-                            color = MaterialTheme.colorScheme.primary,   // Розовый
-                            shape = MaterialTheme.shapes.medium          // Скругленный
+                            color = MaterialTheme.colorScheme.primary, // Розовый
+                            shape = MaterialTheme.shapes.medium // Скругленный
                         )
                 )
 
@@ -92,7 +102,7 @@ private fun ThemeWithBackgroundPreview() {
                         .fillMaxWidth()
                         .height(100.dp)
                         .background(
-                            color = MaterialTheme.colorScheme.tertiary,  // Голубой
+                            color = MaterialTheme.colorScheme.tertiary, // Голубой
                             shape = MaterialTheme.shapes.medium
                         )
                 )
@@ -105,7 +115,7 @@ private fun ThemeWithBackgroundPreview() {
 @Preview(
     name = "Theme without Background",
     showBackground = true,
-    backgroundColor = 0xFF262135  // Просто цвет без размытий
+    backgroundColor = 0xFF262135 // Просто цвет без размытий
 )
 @Composable
 private fun ThemeWithoutBackgroundPreview() {
@@ -114,7 +124,7 @@ private fun ThemeWithoutBackgroundPreview() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background)  // Просто цвет
+                .background(MaterialTheme.colorScheme.background) // Просто цвет
                 .padding(MaterialTheme.dimensions.screenPadding),
             verticalArrangement = Arrangement.spacedBy(MaterialTheme.dimensions.spacingMedium)
         ) {

@@ -21,4 +21,5 @@ dependencies {
     implementation(project(":feature:ai-coach"))
     implementation(project(":core:navigation"))
     implementation(project(":core:domain"))
+    implementation(project(":core:ui"))
 }

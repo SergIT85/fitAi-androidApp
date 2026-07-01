@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -36,7 +37,7 @@ import androidx.compose.ui.unit.dp
 )
 @Suppress("LongMethod")
 @Composable
-private fun ThemeWithBackgroundPreview() {
+fun ThemeWithBackgroundPreview() {
     FitnessAppTheme {
         FitnessBackground { // ← Применяем фон
             Column(
@@ -82,8 +83,16 @@ private fun ThemeWithBackgroundPreview() {
                         .background(
                             color = MaterialTheme.colorScheme.secondary, // Желтый
                             shape = MaterialTheme.shapes.extraLarge // Pill форма
-                        )
-                )
+                        ),
+                    contentAlignment = Alignment.CenterStart
+                ) {
+                    Text(
+                        text = "Date",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSecondaryFixed,
+                        modifier = Modifier.padding(start = 16.dp)
+                    )
+                }
 
                 // Розовая карточка
                 Box(
